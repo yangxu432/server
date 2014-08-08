@@ -14,10 +14,10 @@ def inplace_change(filename, old_string, new_string):
                 print 'No occurances of "{old_string}" found.'.format(**locals())
 
 print "********fvcom change**********"
-inplace_change('/home/yang/server/sci-wms/sciwms/urls.py',
+inplace_change('./sci-wms/sciwms/urls.py',
                '''url(r'^$', 'sciwms.apps.wms.views.index', name="index"),''',
                '')
-inplace_change('/home/yang/server/sci-wms/sciwms/settings/defaults.py',
+inplace_change('./sci-wms/sciwms/settings/defaults.py',
                "'south'",
  """'south',
     'celery',
