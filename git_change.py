@@ -14,12 +14,19 @@ def inplace_change(filename, old_string, new_string):
                 print 'No occurances of "{old_string}" found.'.format(**locals())
 
 print "********fvcom change**********"
-inplace_change('./sci-wms/sciwms/urls.py',
-               '''url(r'^$', 'sciwms.apps.wms.views.index', name="index"),''',
-               '')
+# urls.py
+#inplace_change('./sci-wms/sciwms/urls.py',
+#               '''url(r'^$', 'sciwms.apps.wms.views.index', name="index"),''',
+#               '')
+
+# setting.py
 inplace_change('./sci-wms/sciwms/settings/defaults.py',
                "'south'",
  """'south',
-    'celery',
-    'test',""")
+    'djcelery',""")
+inplace_change('./sci-wms/sciwms/settings/defaults.py',
+               "'django.contrib.admin',",
+ """#'django_admin_bootstrapped',
+    'django.contrib.admin',"""
+)
 print "******************************"

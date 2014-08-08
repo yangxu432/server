@@ -1,0 +1,2 @@
+django-celery
+django-admin-bootstrapped==1.6.4
